@@ -3,11 +3,11 @@ In order to convert a vmdk image to a vmx one, follow these steps:
 
 1. Run powershell as admin
 
-2. Load the vm utils script module: 
-	Import-Module VirtualMachineConverter\MvmcCmdlet.psd1
+2. Load the vm utils script module:
+	`Import-Module VirtualMachineConverter\MvmcCmdlet.psd1`
 
 3. Use the dsfk tools to exctract descriptor metadata from the image:
-	dsfok\dsfo.exe .\whatever.vmdk 512 1024 descriptor.txt
+	`dsfok\dsfo.exe .\whatever.vmdk 512 1024 descriptor.txt`
 
 4. Edit the desriptor file:
 ~~~~
@@ -34,7 +34,7 @@ ddb.virtualHWVersion = "12"
 ~~~~
 
 5. Flush the descriptor metatada back into the image:
-	dsfok\dsfi.exe .\whatever.vmdk 512 1024 descriptor.txt
+	`dsfok\dsfi.exe .\whatever.vmdk 512 1024 descriptor.txt`
 
 6. Convert the vm:
-	ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\whatever.vmdk -VhdType DynamicHardDisk -VhdFormat Vhdx -DestinationLiteralPath .\whatever.vmdx -Verbose
+	`ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\whatever.vmdk -VhdType DynamicHardDisk -VhdFormat Vhdx -DestinationLiteralPath .\whatever.vmdx -Verbose`
