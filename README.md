@@ -1,4 +1,9 @@
 # hypervtools
+
+> A note for OVA files. They are really just a tar archive containing the actual vmdk,
+> so you can just use tar -xvf whatever.ova and then follow the process bellow to convert
+> the vmdk you just extracted.
+
 In order to convert a vmdk image to a vmx one, follow these steps:
 
 1. Run powershell as admin
